@@ -48,6 +48,7 @@
   background-color: #FF5F38;
   display: none;
   transition: all ease-in-out 1s;
+  overflow: hidden;
  }
 
  #menuBtn{
@@ -516,7 +517,7 @@
 
  /* page6 */
  #page7 {
-   height: 100vh;
+   min-height: 100vh;
    width: 100%;
    background: transparent;
  }
@@ -527,7 +528,7 @@
    background-color: #0E0E0E;
    z-index: 10;
    bottom: 0;
-   height: 100vh;
+   max-height: 100vh;
    width: 100%;
    padding: 3vw;
    color: #FFFCF1;
@@ -594,9 +595,17 @@
   margin-top: -6vw;
   font-size: 26vw;
   font-weight: 100;
+  overflow: hidden;
 }
 
 #footerlast h1 span{
   font-family: rejoy ;
   font-weight: 100;
+  display: inline-block;
+}
+
+
+
+@media screen  {
+  
 }

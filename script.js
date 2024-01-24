@@ -127,12 +127,12 @@ function page2_4_Animation() {
     gsap.from("#elem2 h2", {
         xPercent: -250,
         stagger: 0,
-        duration: 1,
+        duration: 2,
         scrollTrigger: {
             trigger: "#page4",
             scroller: "#main",
             start: "top 90% ",
-            end: "top 80% ",
+            end: "top 37% ",
             // markers: true,
             scrub: 1,
 
@@ -169,15 +169,15 @@ function page5Cursor() {
         })
     })
 
-    page5con.addEventListener("mouseenter", (() =>{
+    page5con.addEventListener("mouseenter", (() => {
         document.querySelector("#cursor2").style.opacity = 1;
         gsap.to(cursor, {
             scale: 1
         })
     }))
-    page5con.addEventListener("mouseleave", (() =>{
-        gsap.to(cursor,{
-            scale:0
+    page5con.addEventListener("mouseleave", (() => {
+        gsap.to(cursor, {
+            scale: 0
         })
     }))
 }
@@ -190,100 +190,77 @@ function swiper() {
         autoplay: {
             delay: 3000,
             disableOnInteraction: true,
-          },
-      });
+        },
+    });
 }
 
 function loader() {
     let tl = gsap.timeline()
 
     tl.from("#loader h3", {
-        x:40,
+        x: 40,
         // y:100,
-        opacity:0,
-        duration:1,
-        stagger:0.2
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2
     })
 
     tl.to("#loader h3", {
-        x:-40,
-        opacity:0,
-        duration:1,
-        stagger:0.1
+        x: -40,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1
     })
 
-    tl.to("#loader",{
-        opacity:0
+    tl.to("#loader", {
+        opacity: 0
     })
 
-    tl.to("#loader",{
-        display:"none"
+    tl.to("#loader", {
+        display: "none"
     })
 
     tl.from("#page1-con h1 span", {
-        y:100,
-        opacity:0,
-        stagger:0.1,
-        delay:-0.8
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        delay: -0.8
     })
 
 }
 
 function footerCon() {
-    gsap.from("#footerlast h1",{
+    gsap.from("#footerlast h1 span", {
         y: -200,
-        stagger: 0.5,
-        opacity:0,
-        duration:2,
+        stagger: 0.3,
+        opacity: -2,
+        duration: 3,
         scrollTrigger: {
             trigger: "#page7",
             scroller: "#main",
-            start: "top 75% ",
-            end: "top 47% ",
-            scrub:2
+            start: "top 75%",
+            end: "top 47%",
+            scrub: 2
         }
+    });
 
-    })
+
 }
+
 
 function MenuSec() {
 
     const closeBtn = document.querySelector("#close")
     const menuBtn = document.querySelector("#menuBtn")
     const menusec = document.querySelector("#manu")
-    
-    menuBtn.addEventListener("click", () =>{
+
+    menuBtn.addEventListener("click", () => {
         menusec.style.display = "block"
     })
-    closeBtn.addEventListener("click", () =>{
+    closeBtn.addEventListener("click", () => {
         menusec.style.display = "none"
     })
 }
-
-
-    // const menuBtn = document.getElementById("menuBtn");
-    // const closeBtn = document.getElementById("close");
-    // const manu = document.getElementById("manu");
-
-    // menuBtn.addEventListener("click", function () {
-    //     gsap.to(manu, {
-    //         height:100,
-    //         duration: 1,
-    //         ease: "power2.inOut",
-    //     });
-    // });
-
-    // closeBtn.addEventListener("click", function () {
-    //     gsap.to(manu, {
-    //         top:-100,
-    //         duration:1,
-    //         ease: "power2.inOut",
-    //         onComplete: function () {
-    //             manu.style.display = "none";
-    //         },
-    //     });
-    // });
-
 
 
 

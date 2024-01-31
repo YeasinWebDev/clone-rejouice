@@ -1,3 +1,51 @@
+function menuIn() {
+    let manu = document.getElementById('manu');
+    let menuBtn = document.getElementById('menuBtn');
+    let closeBtn = document.getElementById('close');
+
+
+    menuBtn.addEventListener("click", () => {
+        let tl = gsap.timeline()
+        tl.to(menuBtn, { duration: 0.5, opacity: 0, ease: 'power2.inOut' });
+        tl.to(manu, { duration: 0.5, y: "100vh", delay: -0.8, ease: 'power2.inOut' });
+        tl.from("#M-right h3", {
+            y: -200,
+            stagger: 0.3,
+            opacity: -2,
+            duration: 0.5,
+        }, 'same')
+
+        tl.from("#left video", {
+            scale: -2,
+            opacity: -2,
+            duration: 1,
+        }, "same")
+        tl.to("#close", { duration: 0.5, opacity: 1, delay: -0.8, ease: 'power2.inOut' });
+    })
+
+
+    closeBtn.addEventListener("click", () => {
+        const tl = gsap.timeline()
+        tl.to("#close", { opacity: 0, ease: 'power2.inOut' });
+        tl.to("#M-right h3", {
+            y: -200,
+            stagger: 0.3,
+            opacity: -2,
+            delay: -1
+            // duration: 0.5,
+        }, 'same')
+
+        tl.to("#left video", {
+            scale: -2,
+            opacity: -2,
+            duration: 1,
+        }, "same")
+        tl.to(manu, { y: "-100vh", ease: 'power2.inOut' }, "same");
+
+        tl.to(menuBtn, { opacity: 1, delay: -1, ease: 'power2.inOut' });
+    })
+}
+
 
 function scroll() {
 
@@ -248,23 +296,9 @@ function footerCon() {
 }
 
 
-function MenuSec() {
+// MenuSec()
 
-    const closeBtn = document.querySelector("#close")
-    const menuBtn = document.querySelector("#menuBtn")
-    const menusec = document.querySelector("#manu")
-
-    menuBtn.addEventListener("click", () => {
-        menusec.style.display = "block"
-    })
-    closeBtn.addEventListener("click", () => {
-        menusec.style.display = "none"
-    })
-}
-
-
-
-MenuSec()
+menuIn()
 loader()
 swiper()
 scroll()

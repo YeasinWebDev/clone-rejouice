@@ -27,20 +27,7 @@ function menuIn() {
     closeBtn.addEventListener("click", () => {
         const tl = gsap.timeline()
         tl.to("#close", { opacity: 0, ease: 'power2.inOut' });
-        tl.to("#M-right h3", {
-            y: -200,
-            stagger: 0.3,
-            opacity: -2,
-            delay: -1
-            // duration: 0.5,
-        }, 'same')
-
-        tl.to("#left video", {
-            scale: -2,
-            opacity: -2,
-            duration: 1,
-        }, "same")
-        tl.to(manu, { y: "-100vh", ease: 'power2.inOut' }, "same");
+        tl.to(manu, { y: "-100vh", ease: 'power2.inOut', delay:-1 });
 
         tl.to(menuBtn, { opacity: 1, delay: -1, ease: 'power2.inOut' });
     })
